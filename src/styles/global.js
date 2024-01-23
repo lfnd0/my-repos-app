@@ -13,14 +13,13 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #0D2636;
+    background: #1B2838;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body, input, button {
-    color: #222222;
     font-size: 14px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
