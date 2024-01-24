@@ -99,6 +99,6 @@ export const Trash = styled.button.attrs({
   padding: 8px 7px;
   outline: 0;
   border-radius: 4px;
-  color: #C7D5E0;
+  color: #FF0000;
   background: transparent;
 `;

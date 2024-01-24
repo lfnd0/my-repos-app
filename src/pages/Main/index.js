@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Container, SubmitButton, Form, List, Trash } from "./styles";
 import { FaBars, FaGithub, FaPlus, FaSpinner, FaTrash } from "react-icons/fa";
 import API from "../../api/services";
+import { Link } from "react-router-dom";
 
 export default function Main() {
   const [newRepository, setNewRepository] = useState("");
@@ -97,21 +98,21 @@ export default function Main() {
         {
           repositories.map(item => (
             <li key={item.name}>
+              {item.name}
+
               <span>
-                <a href="/repository">
+                <Link to={`/repository/${encodeURIComponent(item.name)}`} title="Ver detalhes do repositório">
                   <FaBars size={20} />
-                </a>
+                </Link>
 
-                {item.name}
+                <Trash onClick={() => handleDelete(item.name)} title="Excluir o repositório">
+                  <FaTrash size={16} />
+                </Trash>
               </span>
-
-              <Trash onClick={() => handleDelete(item.name)}>
-                <FaTrash size={14} />
-              </Trash>
             </li>
           ))
         }
       </List>
-    </Container>
+    </Container >
   );
 }
