@@ -28,7 +28,7 @@ export const Form = styled.form`
     padding: 10px 15px;
     border-radius: 4px;
     font-size: 17px;
-    border: 1px solid #C7D5E0;
+    border: 1px solid ${props => (props.hasError ? '#FF0000' : '#C7D5E0')};
     color: #171A21;
   }
 `;
