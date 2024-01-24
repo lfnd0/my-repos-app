@@ -66,3 +66,39 @@ export const SubmitButton = styled.button.attrs(props => ({
     `
   };
 `;
+
+export const List = styled.ul`
+  margin-top: 20px;
+  color: #C7D5E0;
+  list-style: none;
+  li {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    & + li {
+      border-top: 1px solid #C7D5E0;
+    }
+    a {
+      margin-right:5px;
+      color: #C7D5E0;
+      text-decoration: none;
+    }
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+`;
+
+export const Trash = styled.button.attrs({
+  type: "button"
+})`
+  border: 0;
+  padding: 8px 7px;
+  outline: 0;
+  border-radius: 4px;
+  color: #C7D5E0;
+  background: transparent;
+`;
