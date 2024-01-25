@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Back, Container, Loading, Owner } from "./styles";
+import { Back, Container, Issues, Loading, Owner } from "./styles";
 import { useEffect, useState } from "react";
 import API from "../../api/services";
 import { FaArrowLeft, FaSpinner } from "react-icons/fa";
@@ -55,6 +55,29 @@ export default function Repository() {
 
         <p>{repository.description}</p>
       </Owner>
+
+      <Issues>
+        {
+          issues.map(issue => (
+            <li key={issue.id.toString()}>
+              <img src={issue.user.avatar_url} alt={issue.user.login} />
+
+              <div>
+                <strong>
+                  <a href={issue.html_url}>{issue.title}</a>
+                  {
+                    issue.labels.map(label => (
+                      <span key={label.id.toString()}>{label.name}</span>
+                    ))
+                  }
+                </strong>
+
+                <p>{issue.user.login}</p>
+              </div>
+            </li>
+          ))
+        }
+      </Issues>
     </Container>
   );
 }

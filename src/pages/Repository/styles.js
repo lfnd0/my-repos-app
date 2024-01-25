@@ -4,10 +4,10 @@ import styled, { css, keyframes } from "styled-components";
 const loadAnimated = keyframes`
   from {
     transform: rotate(0deg);
-  }
+  };
   to {
     transform: rotate(360deg);
-  }
+  };
 `;
 
 export const Loading = styled.div`
@@ -23,7 +23,7 @@ export const Loading = styled.div`
     css`
       svg {
         animation: ${loadAnimated} 2s linear infinite;
-      }
+      };
     `
   };
 `;
@@ -64,4 +64,53 @@ export const Back = styled(Link)`
   border: 0;
   outline: 0;
   background: transparent;
-`
+`;
+
+export const Issues = styled.ul`
+  margin-top: 30px;
+  padding: 30px;
+  border-top: 1px solid #C7D5E0;
+  list-style: none;
+  & + li {
+    margin-top: 12px;
+  };
+  li {
+    display: flex;
+    padding: 15px 10px;
+    img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid #1B2838;
+    };
+    div {
+      flex: 1;
+      margin-left: 12px;
+      p {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #C7D5E0;
+      }
+    };
+    strong {
+      font-size: 15px;
+      a {
+        text-decoration: none;
+        color: #C7D5E0;
+        transform: 0.3s;
+        &:hover {
+          color: #1B2838;
+        };
+      };
+      span {
+        border-radius: 4px;
+        font-size: 4px;
+        font-weight: 600;
+        padding: 2px 4px;
+        margin-left: 10px;
+        color: #C7D5E0;
+        background-color: #1B2838;
+      };
+    };
+  };
+`;
