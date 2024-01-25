@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
-import { Container } from "./styles";
+import { Back, Container, Loading, Owner } from "./styles";
 import { useEffect, useState } from "react";
 import API from "../../api/services";
+import { FaArrowLeft, FaSpinner } from "react-icons/fa";
 
 export default function Repository() {
   const { name } = useParams();
@@ -17,7 +18,7 @@ export default function Repository() {
         await API.get(`repos/${name}/issues`, {
           params: {
             state: 'open',
-            per_page: 5,
+            per_page: 10,
           }
         }),
       ]);
@@ -30,9 +31,30 @@ export default function Repository() {
     getRepository();
   }, [name]);
 
+  if (isLoading) {
+    return (
+      <Loading load={isLoading}>
+        <FaSpinner color="#C7D5E0" size={40} />
+      </Loading>
+    );
+  }
+
   return (
     <Container>
-      {name}
+      <Back to="/">
+        <FaArrowLeft color="#C7D5E0" size={20} title="Voltar" />
+      </Back>
+
+      <Owner>
+        <img
+          src={repository.owner.avatar_url}
+          alt={repository.owner.login}
+        />
+
+        <h1>{repository.name}</h1>
+
+        <p>{repository.description}</p>
+      </Owner>
     </Container>
   );
 }

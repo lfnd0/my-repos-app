@@ -15,8 +15,8 @@ export const Container = styled.div`
     color: #C7D5E0;
     svg {
       margin-right: 10px;
-    }
-  }
+    };
+  };
 `;
 
 export const Form = styled.form`
@@ -30,16 +30,16 @@ export const Form = styled.form`
     font-size: 17px;
     border: 1px solid ${props => (props.hasError ? '#FF0000' : '#C7D5E0')};
     color: #171A21;
-  }
+  };
 `;
 
 const loadAnimated = keyframes`
   from {
     transform: rotate(0deg);
-  }
+  };
   to {
     transform: rotate(360deg);
-  }
+  };
 `;
 
 export const SubmitButton = styled.button.attrs(props => ({
@@ -62,7 +62,7 @@ export const SubmitButton = styled.button.attrs(props => ({
     css`
       svg {
         animation: ${loadAnimated} 2s linear infinite;
-      }
+      };
     `
   };
 `;
@@ -79,16 +79,16 @@ export const List = styled.ul`
     justify-content: space-between;
     & + li {
       border-top: 1px solid #C7D5E0;
-    }
+    };
     a {
       margin-right:5px;
       color: #C7D5E0;
       text-decoration: none;
-    }
+    };
     span {
       display: flex;
       align-items: center;
-    }
+    };
   }
 `;
 
