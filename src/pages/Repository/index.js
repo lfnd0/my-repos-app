@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Back, Container, Issues, Loading, Owner } from "./styles";
+import { Back, Container, Issues, Loading, Owner, Pages } from "./styles";
 import { useEffect, useState } from "react";
 import API from "../../api/services";
 import { FaArrowLeft, FaSpinner } from "react-icons/fa";
@@ -10,6 +10,7 @@ export default function Repository() {
   const [repository, setRepository] = useState({});
   const [issues, setIssues] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function getRepository() {
@@ -30,6 +31,26 @@ export default function Repository() {
 
     getRepository();
   }, [name]);
+
+  useEffect(() => {
+    async function getIssuesPage() {
+      const pagedIssuesData = await API.get(`repos/${name}/issues`, {
+        params: {
+          state: 'open',
+          page,
+          per_page: 10,
+        },
+      });
+
+      setIssues(pagedIssuesData.data)
+    }
+
+    getIssuesPage();
+  }, [name, page]);
+
+  function handlePage(action) {
+    setPage(action === 'back' ? page - 1 : page + 1);
+  }
 
   if (isLoading) {
     return (
@@ -78,6 +99,23 @@ export default function Repository() {
           ))
         }
       </Issues>
+
+      <Pages>
+        <button
+          type="button"
+          onClick={() => { handlePage('back') }}
+          disabled={page < 2}
+        >
+          Anterior
+        </button>
+
+        <button
+          type="button"
+          onClick={() => handlePage('next')}
+        >
+          Próxima
+        </button>
+      </Pages>
     </Container>
   );
 }

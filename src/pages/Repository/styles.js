@@ -114,3 +114,21 @@ export const Issues = styled.ul`
     };
   };
 `;
+
+export const Pages = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  button {
+    outline: 0;
+    border: 0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: #1B2838;
+    color: #C7D5E0;
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    };
+  };
+`;
