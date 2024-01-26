@@ -104,7 +104,7 @@ export const Issues = styled.ul`
       };
       span {
         border-radius: 4px;
-        font-size: 4px;
+        font-size: 10px;
         font-weight: 600;
         padding: 2px 4px;
         margin-left: 10px;
@@ -115,7 +115,7 @@ export const Issues = styled.ul`
   };
 `;
 
-export const Pages = styled.div`
+export const Pagination = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,4 +131,19 @@ export const Pages = styled.div`
       opacity: 0.5;
     };
   };
+`;
+
+export const Filters = styled.div`
+  margin: 15px 0;
+  button {
+    outline: 0;
+    border: 0;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 0 3px;
+    &:nth-child(${props => props.active + 1}) {
+      background-color: #1B2838;
+      color: #C7D5E0;
+    };
+  }
 `;
