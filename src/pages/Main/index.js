@@ -78,7 +78,7 @@ export default function Main() {
       <Form onSubmit={handleSubmit} hasError={alert}>
         <input
           type="text"
-          placeholder="author/repository"
+          placeholder="autor/repositório"
           value={newRepository}
           onChange={handleInputChange}
         />
