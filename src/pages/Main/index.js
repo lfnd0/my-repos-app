@@ -78,7 +78,7 @@ export default function Main() {
       <Form onSubmit={handleSubmit} hasError={alert}>
         <input
           type="text"
-          placeholder="Adicione o repositório"
+          placeholder="author/repository"
           value={newRepository}
           onChange={handleInputChange}
         />
