@@ -1,5 +1,5 @@
 <h1 align="center">
-  My Repos App
+   App Meus Repositórios
 </h1>
 
 <p align="center">
@@ -16,3 +16,25 @@
     alt="React"
   >
 </p>
+
+### :hammer_and_wrench: Dependências
+- [GitHub REST API](https://docs.github.com/en/rest)
+- [ReactJS](https://react.dev/learn)
+- [React Router](https://reactrouter.com/en/main/start/overview)
+- [Styled Components](https://styled-components.com/docs)
+
+### :fire: Execução do projeto
+  1. Instalação:
+     ```
+     npm i
+     ```
+  2. Execução:
+     ```
+     npm start
+     ```
+
+### :pushpin: Funcionalidades
+- Adicionar um repositório do GitHub.
+- Remover um repositório do GitHub.
+- Filtrar as *issues* de acordo com os estados: **Todas**, **Abertas** e **Fechadas**.
+- Paginar a listagem das *issues*.
